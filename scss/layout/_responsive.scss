@@ -1,0 +1,174 @@
+@use "../utilities/variables" as *;
+
+/*TABLETS - 600PX*/
+
+@media (min-width: 600px) {
+
+    /* Imágenes */
+
+    .logos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .carousel-item img {
+        height: 350px;
+    }
+
+    /* Productos */
+
+    .productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    /* Footer */
+
+    footer {
+        grid-template-areas:
+            "marca contacto"
+            "redes redes"
+            "copyright copyright";
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    /* Quiénes somos */
+
+    .quienes_somos {
+        grid-template-areas:
+            "texto"
+            "imagen";
+
+        gap: 30px;
+    }
+
+    .imagen_nosotros img {
+        height: 350px;
+    }
+}
+
+/*NAVBAR EXPANDIDA - 992PX*/
+
+@media (min-width: 992px) {
+
+    header {
+        .navbar {
+            .container-fluid {
+                flex-wrap: nowrap;
+            }
+
+            .navbar-collapse {
+                display: flex !important;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .navbar-nav {
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px;
+                width: auto;
+
+                .nav-link {
+                    padding: 10px 12px;
+                }
+            }
+        }
+    }
+}
+
+/*ESCRITORIO - 1024PX*/
+
+@media (min-width: 1024px) {
+
+    /* Navbar */
+
+    header {
+        .navbar {
+            padding: 10px 2%;
+        }
+    }
+
+    /* Buscador */
+
+    header .buscador {
+        max-width: 350px;
+        margin: 0 20px 0 0;
+    }
+
+    /* Contenido */
+
+    main {
+        padding: 35px 5%;
+    }
+
+    .contenido-principal {
+        grid-template-areas:
+            "monitores accesorios";
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+        gap: 40px;
+    }
+
+    /* Imágenes */
+
+    .logos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+
+        img {
+            height: 220px;
+        }
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+
+    /* Productos */
+
+    .productos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        padding: 30px;
+    }
+
+    /* Footer */
+
+    footer {
+        grid-template-areas:
+            "marca contacto redes"
+            "copyright copyright copyright";
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+        padding: 30px 5%;
+
+        section {
+            text-align: left;
+        }
+
+        p {
+            text-align: left;
+        }
+    }
+
+    /* Quiénes somos */
+
+    .quienes_somos {
+        grid-template-areas: "texto imagen";
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 50px;
+        padding: 40px;
+    }
+
+    .imagen_nosotros img {
+        height: 350px;
+    }
+}

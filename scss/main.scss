@@ -1,0 +1,29 @@
+/*UTILIDADES*/
+
+@use "./utilities/variables";
+@use "./utilities/mixins";
+
+/*BASE*/
+
+@use "./base/tipografia";
+@use "./base/base";
+
+/*LAYOUT*/
+
+@use "./layout/header";
+@use "./layout/nav";
+@use "./layout/footer";
+
+/*COMPONENTES*/
+
+@use "./components/buttons";
+@use "./components/cards";
+@use "./components/productos";
+@use "./components/galeria";
+@use "./components/carrusel";
+@use "./components/tablas";
+@use "./components/animaciones";
+
+/*RESPONSIVE */
+
+@use "./layout/responsive";

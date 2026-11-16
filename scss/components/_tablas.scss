@@ -1,0 +1,40 @@
+@use "../utilities/variables" as *;
+
+/*TABLAS*/
+
+table {
+    width: 100%;
+    max-width: $ancho-maximo;
+    margin: 25px auto;
+    border-collapse: collapse;
+    background-color: $color-blanco;
+    box-shadow: $sombra-media;
+}
+
+caption {
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: $peso-bold;
+    margin-bottom: 15px;
+    color: $color-texto;
+}
+
+th {
+    background-color: $color-texto;
+    color: $color-blanco;
+    padding: 10px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    overflow-wrap: anywhere;
+}
+
+tbody tr {
+    &:hover {
+        background-color: #f1f5f9;
+    }
+}

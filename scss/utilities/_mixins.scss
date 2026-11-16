@@ -1,0 +1,71 @@
+@use "variables" as *;
+
+/* MIXIN PARA CENTRAR ELEMENTOS */
+
+@mixin centrar-elementos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* MIXIN PARA BOTONES */
+
+@mixin boton-base($fondo: $color-primario, $texto: $color-negro) {
+    padding: $espaciado-medio 15px;
+    border: none;
+    border-radius: $radio-borde;
+    background-color: $fondo;
+    color: $texto;
+    font-family: $fuente-principal;
+    font-weight: $peso-semi-bold;
+    cursor: pointer;
+
+    transition: background-color $transicion-rapida,
+                color $transicion-rapida,
+                transform $transicion-rapida;
+}
+
+
+/* MIXIN PARA EFECTOS HOVER */
+
+@mixin efecto-elevacion($distancia: -5px) {
+    transition: transform $transicion-rapida,
+                box-shadow $transicion-rapida;
+
+    &:hover {
+        transform: translateY($distancia);
+    }
+}
+
+
+/* MIXIN PARA SOMBRAS */
+
+@mixin aplicar-sombra($sombra: $sombra-suave) {
+    box-shadow: $sombra;
+}
+
+
+/* MIXIN PARA FOCUS */
+
+@mixin foco-visible($color: $color-primario) {
+    outline: 2px solid $color;
+    outline-offset: 3px;
+}
+/*MIXIN PARA EFECTOS DE IMÁGENES*/
+
+@mixin efecto-imagen($escala: 1.02, $sombra: 0 6px 15px rgba(0, 0, 0, 0.2)) {
+    transition: transform $transicion-rapida, box-shadow $transicion-rapida;
+
+    &:hover {
+        transform: scale($escala);
+        box-shadow: $sombra;
+    }
+}
+
+/*PLACEHOLDER PARA ACCESIBILIDAD*/
+
+%foco-accesible {
+    outline: 2px solid $color-texto;
+    outline-offset: 3px;
+}

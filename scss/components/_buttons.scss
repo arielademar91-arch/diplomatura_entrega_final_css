@@ -1,0 +1,9 @@
+@use "../utilities/mixins" as *;
+
+/*ACCESIBILIDAD DE BOTONES E INPUTS*/
+
+button:focus-visible,
+.btn:focus-visible,
+input:focus-visible {
+    @extend %foco-accesible;
+}

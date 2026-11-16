@@ -1,0 +1,162 @@
+@use "../utilities/variables" as *;
+
+/*NAVBAR BOOTSTRAP*/
+
+header {
+    .navbar {
+        width: 100%;
+        padding: 10px 0;
+        background-color: $color-fondo-header;
+
+        .container-fluid {
+            gap: 15px;
+        }
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 5px 10px 5px 0;
+
+        .logo {
+            display: block;
+            width: auto;
+            height: $alto-logo;
+            max-width: 180px;
+            object-fit: contain;
+        }
+    }
+
+    .navbar-toggler {
+        padding: 7px 10px;
+        border: 1px solid $color-primario;
+        border-radius: $radio-borde;
+
+        transition: background-color $transicion-rapida,
+                    border-color $transicion-rapida;
+
+        &:hover {
+            background-color: $color-secundario;
+            border-color: $color-secundario;
+        }
+
+        &:focus,
+        &:focus-visible {
+            box-shadow: 0 0 0 3px rgba(255, 188, 14, 0.4);
+            outline: none;
+        }
+    }
+
+    .navbar-collapse {
+        flex-grow: 1;
+    }
+
+    .navbar {
+        .navbar-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 5px;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            .nav-item {
+                margin: 0;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 10px 12px;
+                color: $color-blanco;
+                text-align: center;
+                font-family: $fuente-principal;
+                font-size: 14px;
+                border-radius: $radio-borde;
+
+                transition: color $transicion-rapida,
+                            background-color $transicion-rapida,
+                            transform $transicion-rapida;
+
+                &:hover {
+                    color: $color-negro;
+                    background-color: $color-primario;
+                    transform: translateY(-2px);
+                }
+
+                &:focus,
+                &:focus-visible {
+                    color: $color-blanco;
+                    background-color: $color-secundario;
+                    outline: 2px solid $color-primario;
+                    outline-offset: 2px;
+                }
+
+                &:active {
+                    color: $color-blanco;
+                    background-color: $color-secundario;
+                    transform: scale(0.98);
+                }
+
+                &.active {
+                    color: $color-primario;
+                    font-weight: $peso-bold;
+                }
+            }
+        }
+    }
+}
+
+/*BUSCADOR*/
+
+.buscador {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    max-width: 500px;
+
+    input {
+        width: 100%;
+        min-width: 0;
+        padding: 8px;
+        border: none;
+        border-radius: $radio-borde;
+        outline: none;
+        font-family: $fuente-principal;
+
+        &:focus,
+        &:focus-visible {
+            outline: 2px solid $color-primario;
+            outline-offset: 2px;
+        }
+    }
+
+    button {
+        padding: 8px 10px;
+        border: none;
+        border-radius: $radio-borde;
+        background-color: $color-primario;
+        color: $color-negro;
+        font-family: $fuente-principal;
+        font-weight: $peso-semi-bold;
+        cursor: pointer;
+
+        transition: color $transicion-rapida,
+                    background-color $transicion-rapida,
+                    transform $transicion-rapida;
+
+        &:hover,
+        &:focus,
+        &:focus-visible {
+            background-color: $color-secundario;
+            color: $color-blanco;
+        }
+
+        &:active {
+            transform: scale(0.97);
+        }
+    }
+}

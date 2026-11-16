@@ -1,0 +1,55 @@
+@use "../utilities/variables" as *;
+
+/*CARRUSEL BOOTSTRAP*/
+
+.carousel {
+    width: 100%;
+    max-width: $ancho-maximo;
+    margin: 25px auto;
+    overflow: hidden;
+    border-radius: $radio-borde-grande;
+    background-color: $color-texto;
+}
+
+.carousel-inner {
+    border-radius: $radio-borde-grande;
+}
+
+.carousel-item img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    background-color: $color-blanco;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    transition: opacity $transicion-rapida,
+                background-color $transicion-rapida;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+
+    &:focus-visible {
+        outline: 2px solid $color-primario;
+        outline-offset: 3px;
+    }
+}
+
+.carousel-indicators {
+    button {
+        transition: opacity $transicion-rapida,
+                    transform $transicion-rapida;
+
+        &:focus-visible {
+            outline: 2px solid $color-primario;
+            outline-offset: 3px;
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+}

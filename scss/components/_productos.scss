@@ -1,0 +1,114 @@
+@use "../utilities/variables" as *;
+
+/* =====================================================
+   PRODUCTOS Y NOTEBOOKS
+===================================================== */
+
+.productos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    background-color: $color-fondo-productos;
+}
+
+.producto {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 390px;
+    padding: 15px;
+    background-color: $color-blanco;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    box-shadow: $sombra-suave;
+
+    transition: transform $transicion-rapida,
+                box-shadow $transicion-rapida,
+                border-color $transicion-rapida;
+
+    &:hover {
+        transform: translateY(-5px);
+        border-color: $color-primario;
+        box-shadow: $sombra-fuerte;
+    }
+
+    &:focus-within {
+        outline: 2px solid $color-secundario;
+        outline-offset: 3px;
+    }
+
+    &:active {
+        transform: scale(0.99);
+    }
+
+    img {
+        width: 100%;
+        height: $alto-imagen-producto;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin: 10px 0;
+        color: #164b7a;
+        font-size: 16px;
+        font-weight: $peso-normal;
+        text-align: center;
+    }
+
+    .precio {
+        margin-top: auto;
+        margin-bottom: 0;
+        color: #111111;
+        font-size: 20px;
+        font-weight: $peso-bold;
+        text-align: center;
+    }
+}
+
+/* =====================================================
+   ETIQUETA DE STOCK
+===================================================== */
+
+.stock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+    background-color: $color-verde;
+    color: $color-blanco;
+    font-size: 10px;
+    border-radius: 4px;
+}
+
+/*BOTÓN DE ENVÍO*/
+
+.envio {
+    width: 90%;
+    margin: 10px auto 0;
+    padding: 8px;
+    background-color: $color-verde;
+    color: $color-blanco;
+    border: none;
+    border-radius: 4px;
+    font-family: $fuente-principal;
+    font-weight: $peso-semi-bold;
+    cursor: pointer;
+
+    transition: background-color $transicion-rapida,
+                transform $transicion-rapida;
+
+    &:hover,
+    &:focus-visible {
+        background-color: $color-secundario;
+        color: $color-blanco;
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+}

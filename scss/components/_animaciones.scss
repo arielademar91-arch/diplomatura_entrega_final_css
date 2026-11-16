@@ -1,0 +1,61 @@
+
+@keyframes aparecerProducto {
+
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    40% {
+        opacity: 0.5;
+        transform: translateY(12px) scale(0.99);
+    }
+
+    75% {
+        opacity: 0.85;
+        transform: translateY(-3px) scale(1.005);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animación aplicada a las tarjetas de productos. */
+
+.producto {
+    animation: aparecerProducto 0.75s ease backwards;
+}
+
+/* Retraso escalonado para las tarjetas. */
+
+.producto:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.producto:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+/*ACCESIBILIDAD: REDUCCIÓN DE MOVIMIENTO*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
